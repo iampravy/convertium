@@ -1,5 +1,22 @@
+
 # rewrite for root redirect
 RewriteRule ^/?$ /content/${CONTENT_FOLDER_NAME}/us/en.html [PT,L]
+
+# Convertium Rules Test - Start
+# Domain Redirection - we can load these rules individually for each virtual host if there are many domains to handle
+RewriteCond %{HTTP_HOST} ^sg\.example\.com$
+RewriteRule ^/?(.*) https://sg.example.com/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^my\.example\.com$
+RewriteRule ^/?(.*) https://my.example.com/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^uk\.example\.com$
+RewriteRule ^/?(.*) https://uk.example.com/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^de\.example\.com$
+RewriteRule ^/?(.*) https://de.example.com/$1 [R=301,L]
+
+# Convertium Rules Test - End
 
 RewriteCond %{REQUEST_URI} !^/apps
 RewriteCond %{REQUEST_URI} !^/bin

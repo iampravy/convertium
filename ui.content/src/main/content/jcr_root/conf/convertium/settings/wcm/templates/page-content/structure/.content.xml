@@ -22,6 +22,10 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="convertium/components/title"
                     editable="{Boolean}true"/>
+                <articleform
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="convertium/components/articleform"
+                        editable="{Boolean}true"/>
                 <container
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="convertium/components/container"

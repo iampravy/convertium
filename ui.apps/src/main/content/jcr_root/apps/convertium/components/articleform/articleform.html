@@ -1,0 +1,13 @@
+<div class="article-form">
+    <h1>${properties.formTitle}</h1>
+    <div style="display: none;" class="form-url" data-url="${resource.path}.artcileform.json">
+    </div>
+    <form id="articleForm">
+        Article Title - <input type="textfield" required="true" name="articleTitle" value="" rows="15" size="50"/><br/>
+        Article Content - <input type="textarea" required="true" name="articleContent" value="" rows="15"
+                                 size="100"/><br/>
+        Publishing Date - <input type="date" required="true" name="articlePublishDate" value="" rows="15"/><br/>
+        <input type="submit"/>
+    </form>
+    <div class=".result"></div>
+</div>

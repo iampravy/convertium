@@ -16,6 +16,85 @@ The main parts of the template are:
 * all: a single content package that embeds all of the compiled modules (bundles and content packages) including any vendor dependencies
 * analyse: this module runs analysis on the project which provides additional validation for deploying into AEMaaCS
 
+
+# Pre-Requisites
+AEM Version - 6.5 and Installed Service Pack 6.5.17
+JAVA Version - 8
+
+A. OSGI Configurations -
+1. Apache Sling Service User Mapper Service
+Servlet Mappings - convertium.core:writeservice=convertium-write-service
+2. Adobe Granite CSRF Filter
+Filter Methods - Remove POST
+3. Apache Sling Referrer Filter
+Filter Methods - Remove POST
+
+B. Deploy all/target/convertium.all-1.0.0-SNAPSHOT.zip
+C. Convertium Content-1.0.zip package Content structure
+D. ACL Package - acls-1.0.0.zip - User permission and system user
+
+# Convertium Test Details
+
+1. A POC draft/drawing of AEM infrastructure design that meets
+   The criteria.
+   a. Secured
+   b. High Availability
+   c. Redundancy
+
+[Refer] AEMTechnicalArchitecturePresentation.pptx (Microsoft PowerPoint Document)
+
+2. Using the latest AEM Archetype compatible to AEM 6.5.
+   a. All configurations should be recorded in your repository.
+   i.OSGi
+   ii.Dispatcher
+   iii.Apache
+
+[Refer]. This project is created with archetype 43, pre-requisites to run this application - JAVA.8/11, Node & NPM
+
+3. Multi Site Manager and Live Copy.
+   a. Supports 4 domains in one single app.
+   i.sg.example.com [1]
+   ii.my.example.com [2]
+   iii.uk.example.com [3]
+   iv.de.example.com [4]
+
+[Refer] dispatcher/src/conf.d/rewrites/convertium_rewrite.rules and dispatcher/src/conf.d/available_vhosts/convertium_publish.vhost
+
+4. Articles (Development)
+
+a. Create a simple Form component.
+i.Article Name
+ii.Article Content
+iii.Publishing Date
+
+[Praveen]. http://{HOST}:{PORT}/content/convertium/us/en.html
+
+b. Form submits and content stored as Content Fragment.
+
+[Praveen]. Implemented Reverse replication after form submission, content fragments will be reverse replicated from publish to Author
+
+c. A custom workflow will be triggered upon submission to
+process data.
+
+[Praveen]. ArticleFragmentProcess.java that remove cq:distribute and related properties.
+
+d. A Job Scheduler will check the date and publish
+accordingly.
+[Praveen]
+
+e. Article Listing.
+i.Simple Article
+
+[Praveen] Article Listing API has been developed - FE not implemented.
+
+f. Article Page
+i.Article Comments.
+ii.Requires Authenticated viewers.
+1. OAuth – Google / Facebook server-side verification.
+
+[Praveen]. Working solution already here, no point in repeating this steps, kindly understand my view]
+Google documentation here - https://www.albinsblog.com/2020/06/social-login-with-google-oauth2-adobe-experience-manager-aem.html
+
 ## How to build
 
 To build all the modules run in the project root directory the following command with Maven 3:

@@ -2,6 +2,43 @@
 # Collect the dispatchers number
 PassEnv DISP_ID
 
+# Convertium Vhosts for multiple domains
+RewriteEngine On
+<VirtualHost *:30001>
+		Include conf/modules.d/ssl.incl
+		ServerAdmin admin@localhost.com
+		ServerName sg.example.com
+		ServerAlias www.sg.example.com
+		Include conf/modules.d/rewrite/sg.conf
+</VirtualHost>
+
+<VirtualHost *:30001>
+		Include conf/modules.d/ssl.incl
+		ServerAdmin admin@localhost.com
+		ServerName my.example.com
+		ServerAlias www.my.example.com
+		Include conf/modules.d/rewrite/my.conf
+</VirtualHost>
+<VirtualHost *:30001>
+		Include conf/modules.d/ssl.incl
+		ServerAdmin admin@localhost.com
+		ServerName uk.example.com
+		ServerAlias www.uk.example.com
+		Include conf/modules.d/rewrite/uk.conf
+</VirtualHost>
+<VirtualHost *:30001>
+		Include conf/modules.d/ssl.incl
+		ServerAdmin admin@localhost.com
+		ServerName de.example.com
+		ServerAlias www.de.example.com
+		Include conf/modules.d/rewrite/de.conf
+</VirtualHost>
+
+# Convertium Vhosts for multiple domains
+
+
+
+
 <VirtualHost *:80>
 	ServerName	publish
 	# Put names of which domains are used for your published site/content here

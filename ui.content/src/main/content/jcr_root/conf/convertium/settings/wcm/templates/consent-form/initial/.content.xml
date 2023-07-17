@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:fd="http://www.adobe.com/aemfd/fd/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:fd="http://www.adobe.com/aemfd/fd/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
@@ -13,9 +13,9 @@
         <guideContainer
             fd:version="2.1"
             jcr:primaryType="nt:unstructured"
-            themeClientLibRef="adaptiveform.theme.canvas3"
             sling:resourceType="convertium/components/adaptiveForm/formcontainer"
-            fieldType="form">
+            fieldType="form"
+            themeClientLibRef="adaptiveform.theme.canvas3">
             <panelcontainer_2122655199
                 jcr:lastModified="{Date}2023-05-18T06:19:50.297Z"
                 jcr:lastModifiedBy="admin"
@@ -380,8 +380,7 @@
                     linkTarget="_self"
                     name="logoImage"
                     titleValueFromDAM="false"
-                    width="0">
-                </image>
+                    width="0"/>
                 <text
                     jcr:lastModified="{Date}2023-05-12T07:14:19.173Z"
                     jcr:lastModifiedBy="admin"

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
     <filter root="/conf/convertium" mode="merge"/>
+    <filter root="/conf/global/settings/workflow/models/convertium" mode="merge"/>
+    <filter root="/var/workflow/models/convertium" mode="merge"/>
+    <filter root="/conf/global/settings/workflow/launcher/config/convertium" mode="merge"/>
     <filter root="/content/convertium" mode="merge"/>
     <filter root="/content/dam/convertium" mode="merge">
         <exclude pattern="/content/dam/convertium(/.*)?"/>

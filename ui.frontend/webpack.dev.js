@@ -2,6 +2,7 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const SOURCE_ROOT = __dirname + '/src/main/webpack';
 
@@ -19,6 +20,12 @@ module.exports = env => {
         plugins: [
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, SOURCE_ROOT + '/static/index.html')
+            }),
+            new webpack.ProvidePlugin({
+                $: 'jquery',
+                jQuery: 'jquery',
+                'window.jQuery': 'jquery',
+                Popper:['popper.js','default']
             })
         ],
         devServer: {
