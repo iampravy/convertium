@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/convertium" mode="merge"/>
+    <filter root="/content/convertium" mode="merge"/>
+    <filter root="/content/dam/convertium" mode="merge">
+        <exclude pattern="/content/dam/convertium(/.*)?"/>
+        <include pattern="/content/dam/convertium/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/convertium/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/convertium" mode="merge"/>
+</workspaceFilter>
