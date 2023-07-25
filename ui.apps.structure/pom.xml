@@ -29,10 +29,14 @@
                 <groupId>org.apache.jackrabbit</groupId>
                 <artifactId>filevault-package-maven-plugin</artifactId>
                 <configuration>
+                    <properties>
+                        <cloudManagerTarget>none</cloudManagerTarget>
+                    </properties>
                     <filters>
                         <!-- /apps root -->
                         <filter><root>/apps</root></filter>
                         <filter><root>/apps/convertium</root></filter>
+
                         <!-- Common overlay roots -->
                         <filter><root>/apps/sling</root></filter>
                         <filter><root>/apps/cq</root></filter>
@@ -42,6 +46,9 @@
 
                         <!-- Immutable context-aware configurations -->
                         <filter><root>/apps/settings</root></filter>
+
+                        <!-- DAM folder root, will be created via repoinit -->
+                        <filter><root>/content/dam/convertium</root></filter>
 
                     </filters>
                 </configuration>

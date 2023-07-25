@@ -54,7 +54,7 @@
                     <group>com.convertium.stageone</group>
                     <name>convertium.ui.apps</name>
                     <packageType>application</packageType>
-                                        <repositoryStructurePackages>
+                    <repositoryStructurePackages>
                         <repositoryStructurePackage>
                             <groupId>com.convertium.stageone</groupId>
                             <artifactId>convertium.ui.apps.structure</artifactId>
